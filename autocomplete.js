@@ -1,4 +1,11 @@
-const createAutoComplete = ({ root, renderOption, onOptionSelect, inputValue, fetchData }) => {
+//what creates the autocomplete dropdown box.  upon text entry
+const createAutoComplete = ({
+  root,
+  renderOption,
+  onOptionSelect,
+  inputValue,
+  fetchData,
+}) => {
   root.innerHTML = `
 <label><b> Search </b> </label>
 <input class="input"/>
@@ -28,7 +35,7 @@ const createAutoComplete = ({ root, renderOption, onOptionSelect, inputValue, fe
       option.addEventListener("click", () => {
         dropdown.classList.remove("is-active");
         input.value = inputValue(item);
-          onOptionSelect(item);
+        onOptionSelect(item);
       });
       resultsWrapper.appendChild(option);
     }
